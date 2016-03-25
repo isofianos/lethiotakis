@@ -72,6 +72,8 @@
         if(obj.out!='' && obj.in!=''){
           money.push(obj);
           localStorage.setItem('money', JSON.stringify(money));
+          document.getElementById('out').innerHTML = '';
+          document.getElementById('in').innerHTML = '';
         }
       }
     </script>
