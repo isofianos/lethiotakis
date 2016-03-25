@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=nO" />
+    <meta name="msapplication-tap-highlight" content="nO" />
+    <link rel="icon" href="icon.png">
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Tichu Counter</title>
+  </head>
+  <body>
+    <h2 class="color-blue">Data</h2>
+    <h4 class="color-sea right" id="back">Back></h4>
+    <!-- Score -->
+    <table class="roundsScore" cellspacing="0">
+      <tr>
+        <th>
+          <h2 class="color-green">Date</h2>
+        </th>
+        <th>
+          <h2 class="color-green">Exoda</h2>
+        </th>
+        <th>
+          <h2 class="color-green">Esoda</h2>
+        </th>
+      </tr>
+    </table>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+      app.initialize();
+    </script>
+    <script type="text/javascript">
+      var back = document.getElementById('back').onclick = back;
+
+      function back(){
+        localStorage.setItem('money', JSON.stringify(roundScore));
+        location.href = "index.html";
+      }
+      //parse global variables
+      var roundScore = localStorage.getItem('money');
+      roundScore = JSON.parse(roundScore);
+
+      var table = document.getElementsByClassName("roundsScore")[0];
+      var row = table.insertRow(0);
+      for (var i = 0; i < roundScore.length; i++){
+        var row = table.insertRow(-1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        cell1.innerHTML = '<h3 class="color-light-blue">'+roundScore[i].date+'</h3>';
+        cell2.innerHTML = '<h3 class="color-light-blue">'+roundScore[i].out+' &#8364</h3>';
+        cell3.innerHTML = '<h3 class="color-light-blue">'+roundScore[i].in+' &#8364</h3>';
+      }
+    </script>
+  </body>
+</html>

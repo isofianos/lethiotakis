@@ -32,7 +32,6 @@
     <title>Hello World</title>
   </head>
   <body>
-    <h1>Lethiotakis</h1>
     <div class="form-style-6">
     <h1>Form</h1>
       <input type="text" name="field1" id="datepicker" />
@@ -40,6 +39,7 @@
       <input type="number" name="in" id="in" step="0.001"/>
       <input type="submit" value="Submit" id="button"/>
     </div>
+    <h1 id="details">View Data</h1>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
@@ -69,8 +69,15 @@
           out: document.getElementById('out').value,
           in: document.getElementById('in').value
         };
-        money.push(obj);
-        localStorage.setItem('money', JSON.stringify(money));
+        if(obj.out!='' && obj.in!=''){
+          money.push(obj);
+          localStorage.setItem('money', JSON.stringify(money));
+        }
+      }
+    </script>
+    <script type="text/javascript">
+      document.getElementById('details').onclick = function(){
+        location.href = "details.html";
       }
     </script>
   </body>
