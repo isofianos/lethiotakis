@@ -16,13 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+ body {
+  height: 100%;
+  background-image:linear-gradient(rgba(255,255,255, 0.94), rgba(255,255,255, 0.94)), url('../img/money-box.png');
+  background-repeat: none;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: fixed;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  overflow-y: scroll;
+}
 * {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+  -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 form {
     text-align: center;
 }
-
 h1 {
   line-height: 5px;
   font-size: 58px;
@@ -63,7 +74,7 @@ h4 {
   color: #999999;
 }
 .color-blue {
-  color: #2C2D85;
+  color: #0078C1;
 }
 .color-light-blue {
   color: #116FB8;
@@ -80,4 +91,7 @@ h4 {
   border-collapse: collapse;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+}
+.right {
+  float: right;
 }
