@@ -18,7 +18,7 @@
  */
  body {
   height: 100%;
-  background-image:linear-gradient(rgba(255,255,255, 0.94), rgba(255,255,255, 0.94)), url('../img/money-box.png');
+  background-image:linear-gradient(rgba(255,255,255, 0.70), rgba(255,255,255, 0.70)), url('../img/money-box.png');
   background-repeat: none;
   -webkit-background-size: cover;
   -moz-background-size: cover;

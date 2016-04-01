@@ -29,17 +29,17 @@
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" type="text/css" href="css/pikaday.css" />
     <link rel="stylesheet" type="text/css" href="css/form.css" />
-    <title>Hello World</title>
+    <title>Ταμείο</title>
   </head>
   <body>
     <div class="form-style-6">
-    <h1>Form</h1>
+    <h1>Ταμείο</h1>
       <input type="text" name="field1" id="datepicker" />
       <input type="number" name="out" id="out" step="0.001"/>
       <input type="number" name="in" id="in" step="0.001"/>
-      <input type="submit" value="Submit" id="button"/>
+      <input type="submit" value="Αποθήκευση" id="button"/>
     </div>
-    <h1 id="details">View Data</h1>
+    <input type="submit" value="Ιστορικό" id="details"/>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
@@ -50,8 +50,6 @@
     <script>
 
       var money = [];
-      //each time opens the app resets
-      localStorage.setItem('money', JSON.stringify(money));
 
       moment.locale('gr');
       var picker = new Pikaday({
@@ -69,6 +67,8 @@
           out: document.getElementById('out').value,
           in: document.getElementById('in').value
         };
+        var array = localStorage.getItem('money');
+        money = JSON.parse(array);
         if(obj.out!='' && obj.in!=''){
           money.push(obj);
           localStorage.setItem('money', JSON.stringify(money));
